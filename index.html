@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>福建4天3夜｜厦门+泉州手机交互地图</title>
-<meta name="description" content="2026年国庆深圳出发，乘高铁游厦门和泉州的4天3夜手机交互地图。">
+<title>福建4天3夜｜厦门+石狮海岸手机交互地图</title>
+<meta name="description" content="2026年国庆深圳出发，乘高铁游厦门和石狮海岸的4天3夜手机交互地图。">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -237,7 +237,7 @@ a:hover { text-decoration: underline; }
 // ║  TRIP DATA — Hotel and Days data                            ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-const HOTEL = { name: '厦门中山路附近连锁酒店（住2晚）', lat: 24.456500, lng: 118.075500 };
+const HOTEL = { name: '石狮市区连锁酒店（德辉广场/市政府附近，住1晚）', lat: 24.729710, lng: 118.644112 };
 
 const DAYS = [
   { id: 0, label: '总览', color: '#0071e3', locations: [] },
@@ -263,22 +263,23 @@ const DAYS = [
     ]
   },
   {
-    id: 3, label: '第3天', date: '10月5日｜厦门→泉州', title: '动车到泉州 → 开元寺 → 西街 → 古城夜逛', color: '#007aff',
+    id: 3, label: '第3天', date: '10月5日｜厦门→石狮海岸', title: '高铁到晋江 → 洛伽寺 → 红塔湾 → 灯塔公园 → 小威海', color: '#007aff',
     locations: [
-      { name: '厦门北站', lat: 24.6397375, lng: 118.0686353, type: 'transport', time: '08:00左右', desc: '厦门北→泉州站优先选上午车次，运行时间通常约30-50分钟，具体以12306为准。', xhsKeyword: '厦门北 泉州 动车', gmap: '厦门北站' },
-      { name: '泉州站', lat: 24.9759459, lng: 118.5632413, type: 'transport', time: '09:00-10:00', desc: '到泉州后先放行李，再进入古城片区；泉州站到古城还要预留接驳时间。', xhsKeyword: '泉州站 到古城', gmap: '泉州站' },
-      { name: '泉州开元寺', lat: 24.9173271, lng: 118.5810737, type: 'spot', time: '10:30', desc: '泉州古城主线第一站，和西街连着逛，不来回折返。', xhsKeyword: '泉州开元寺攻略', gmap: '泉州开元寺' },
-      { name: '泉州西街', lat: 24.9193446, lng: 118.5762621, type: 'food', time: '12:00', desc: '午饭和古城小吃区域；重点看面线糊、肉粽、姜母鸭、海蛎煎等当日评价。', xhsKeyword: '泉州西街美食攻略', dianpingKeyword: '泉州西街美食', gmap: '泉州西街' },
-      { name: '泉州钟楼', lat: 24.9149599, lng: 118.5880777, type: 'spot', time: '15:00', desc: '从西街往钟楼方向步行，顺路拍照即可，不专门绕路。', xhsKeyword: '泉州钟楼 西街 攻略', gmap: '泉州钟楼' },
-      { name: '通淮关岳庙', lat: 24.9048310, lng: 118.5883879, type: 'spot', time: '17:00', desc: '看体力决定；如果古城走累了，就删掉这里，直接在西街附近吃晚饭。', xhsKeyword: '泉州关岳庙攻略', gmap: '通淮关岳庙' },
-      { name: '泉州西街附近入住', lat: 24.918000, lng: 118.581000, type: 'hotel', time: '晚上', desc: '住西街/开元寺附近连锁酒店，方便晚上吃饭和第二天去泉州站。国庆房价以携程实际为准。', xhsKeyword: '泉州西街附近酒店', gmap: '泉州西街' }
+      { name: '厦门北站', lat: 24.6397375, lng: 118.0686353, type: 'transport', time: '07:30-08:30', desc: '厦门北→晋江站优先选早班车，约18-25分钟，二等座参考约¥20；国庆车次和票价以12306为准。', xhsKeyword: '厦门北 晋江 动车', gmap: '厦门北站' },
+      { name: '晋江站', lat: 24.794305, lng: 118.459252, type: 'transport', time: '约09:00', desc: '到站后不要去泉州古城，直接打车或提前约车去洛伽寺；四个海边点相隔约20公里，不建议靠公交和步行串联。', xhsKeyword: '晋江站 到石狮洛伽寺', gmap: '晋江站' },
+      { name: '洛伽寺', lat: 24.673470, lng: 118.712625, type: 'spot', time: '10:00', desc: '第一站看海上寺庙和黄金海岸，停留约30-45分钟即可；海况不好时不靠近礁石和浪区。', xhsKeyword: '石狮洛伽寺攻略', gmap: '洛伽寺 石狮' },
+      { name: '红塔湾', lat: 24.685091, lng: 118.717508, type: 'spot', time: '11:00', desc: '从洛伽寺向北走，海滩停留约45-60分钟；是否下水看天气、海况和现场管理，国庆人多就以看海为主。', xhsKeyword: '石狮红塔湾攻略', gmap: '红塔湾旅游区 石狮' },
+      { name: '午饭/补给（祥芝镇）', lat: 24.770252, lng: 118.770659, type: 'food', time: '12:30', desc: '四个点之间餐饮选择不稳定，建议在祥芝镇大堡工业区附近看当天营业情况，或提前准备简单补给，避免为了吃饭折返石狮市区。', xhsKeyword: '祥芝镇大堡工业区 美食', dianpingKeyword: '祥芝镇大堡工业区美食', gmap: '祥芝镇大堡工业区' },
+      { name: '东城灯塔公园', lat: 24.775010, lng: 118.774412, type: 'spot', time: '14:00', desc: '祥芝灯塔公园有登坡和观海视野，安排约40分钟；和小威海在同一片祥芝海岸线，顺路游玩。', xhsKeyword: '祥芝东城灯塔公园攻略', gmap: '东城灯塔公园 石狮' },
+      { name: '小威海（东大垵）', lat: 24.765679, lng: 118.780012, type: 'spot', time: '15:00', desc: '最后看“转角遇海”的沿海公路和海岸线，安排约60-90分钟；风大、沙多，拍照时不要站在车道或礁石边。', xhsKeyword: '石狮小威海 东大垵 攻略', gmap: '石狮祥芝东大垵 小威海' },
+      { name: '石狮市区连锁酒店', lat: 24.729710, lng: 118.644112, type: 'hotel', time: '17:30后', desc: '住德辉广场/市政府附近的连锁酒店，方便吃晚饭，第二天打车去泉州站；携程国庆房价和免费停车以实时页面为准。', xhsKeyword: '石狮市区连锁酒店', gmap: '石狮市政府德辉广场' }
     ]
   },
   {
-    id: 4, label: '第4天', date: '10月6日｜泉州→深圳', title: '泉州站 → 深圳北站，提前一天返程', color: '#5856d6',
+    id: 4, label: '第4天', date: '10月6日｜石狮→深圳', title: '石狮市区 → 泉州站 → 深圳北站，提前一天返程', color: '#5856d6',
     locations: [
-      { name: '泉州站', lat: 24.9759459, lng: 118.5632413, type: 'transport', time: '08:00-09:30', desc: '返程不要拖到10月7日最后一天；优先选上午直达深圳北的动车/高铁。', xhsKeyword: '泉州 深圳北 高铁', gmap: '泉州站' },
-      { name: '深圳北站', lat: 22.6120365, lng: 114.0239469, type: 'transport', time: '约12:00-14:00', desc: '泉州→深圳北约3.5-4小时，具体车次和票价以开票后12306为准；当天不再安排福建景点。', xhsKeyword: '泉州到深圳北高铁', gmap: '深圳北站' }
+      { name: '石狮市区酒店 → 泉州站', lat: 24.9759459, lng: 118.5632413, type: 'transport', time: '07:30-09:00', desc: '从石狮市区打车去泉州站，预留国庆拥堵时间；返程不要拖到10月7日最后一天。', xhsKeyword: '石狮市区 到 泉州站', gmap: '泉州站' },
+      { name: '深圳北站', lat: 22.6120365, lng: 114.0239469, type: 'transport', time: '约12:00-14:00', desc: '泉州站→深圳北优先选上午直达动车/高铁，约3.5-4小时；具体车次和票价以开票后12306为准。', xhsKeyword: '泉州站 深圳北 高铁', gmap: '深圳北站' }
     ]
   }
 ];
@@ -291,18 +292,20 @@ function overviewContent() {
   return `
 <div class="hero"><h1>福建4天3夜</h1><p class="subtitle">2026年国庆｜10月3日-10月6日｜深圳出发｜高铁出行</p></div>
 <div class="info-grid">
-  <div class="info-card"><div class="label">住宿</div><div class="value">厦门2晚<br>泉州1晚</div></div>
+  <div class="info-card"><div class="label">住宿</div><div class="value">厦门2晚<br>石狮1晚</div></div>
   <div class="info-card"><div class="label">去程</div><div class="value">深圳北→厦门北<br>高铁优先</div></div>
   <div class="info-card"><div class="label">返程</div><div class="value">10月6日<br>泉州→深圳</div></div>
-  <div class="info-card"><div class="label">路线</div><div class="value">厦门+泉州<br>不赶福州/平潭</div></div>
+  <div class="info-card"><div class="label">路线</div><div class="value">厦门+石狮海岸<br>不去泉州古城</div></div>
 </div>
 <div class="section-head">行程概览</div>
 <div class="day-list">${DAYS.slice(1).map(d=>`<div class="card" onclick="go(${d.id})"><div class="name"><span class="dot" style="background:${d.color}"></span>${d.label} · ${d.title}</div><div class="desc">${d.date}</div></div>`).join('')}</div>
 <div class="section-head">交通比较</div>
-<div class="pay-summary"><h4>高铁：本次采用</h4><div class="ok-text">深圳北→厦门北二等座参考约¥180-313；泉州→深圳北约¥237-260。时间约3-4小时，省机场接驳时间，国庆优先看12306直达票。</div></div>
+<div class="pay-summary"><h4>高铁：本次采用</h4><div class="ok-text">深圳北→厦门北二等座参考约¥180-313；厦门北→晋江站约18-25分钟、二等座参考约¥20；泉州站→深圳北约¥237-260。国庆优先看12306直达票。</div></div>
 <div class="pay-summary"><h4>飞机：只作为价格备选</h4><div class="warn">深圳宝安→厦门高崎飞行时间短，但当前航班查询页面参考价多在¥750以上，且还要加提前到机场、机场往返和行李时间；如果国庆出现低于高铁总价的直飞，再改飞机。</div></div>
+<div class="section-head">泉州改为石狮海岸线</div>
+<div class="pay-summary"><h4>第3天顺序</h4><div>洛伽寺（30-45分钟）→ 红塔湾（45-60分钟）→ 祥芝镇补给 → 东城灯塔公园（约40分钟）→ 小威海（60-90分钟）。小红书路线帖普遍把这些点放在一条石狮海岸线里串联，建议只走一遍，不要在海边和市区之间来回折返。洛伽寺是否值得久留看当天海况和拍摄需求，浪大时不靠近礁石。</div></div>
 <div class="section-head">注意事项</div>
-<div class="pay-summary"><h4>现在先记住这几件事</h4><div>① 国庆票价和余票要等12306开放后再查；② 鼓浪屿船票提前通过厦门轮渡官方渠道看班次；③ 鼓浪屿和泉州古城只保留一个主片区，不要再硬加福州、平潭；④ 酒店优先搜中山路/镇海路、泉州西街/开元寺附近连锁店，国庆价格会高于平日。</div></div>
+<div class="pay-summary"><h4>现在先记住这几件事</h4><div>① 国庆票价和余票要等12306开放后再查；② 鼓浪屿船票提前通过厦门轮渡官方渠道看班次；③ 石狮四个海边点约20公里，建议提前约网约车或包车串联，不要临时靠公交换乘；④ 洛伽寺看海况，别靠近礁石和浪区；⑤ 酒店优先搜石狮市区德辉广场/市政府附近连锁店，国庆价格会高于平日。</div></div>
 <div class="section-head">图例</div>
 <div class="legend">
   <div class="legend-item"><div class="legend-dot" style="background:var(--tint-red)"></div>餐厅</div>
