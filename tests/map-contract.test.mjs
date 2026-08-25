@@ -18,6 +18,8 @@ test('contains the four-day Fujian Xiamen and Quanzhou trip map', async () => {
   assert.match(html, /const DAYS\s*=\s*\[/);
   assert.match(html, /Leaflet/);
   assert.match(html, /xhsKeyword/);
-  assert.match(html, /const XHS_USE_APP = false/);
+  assert.match(html, /const XHS_USE_APP = true/);
+  assert.match(html, /const DP_USE_APP = true/);
+  assert.match(html, /window\.location\.href = kind==='dp' \? dpAppUrl\(loc\) : xhsAppUrl\(loc\)/);
   assert.doesNotMatch(html, /Tokyo|REPLACE:/);
 });

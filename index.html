@@ -403,8 +403,8 @@ function payChips(pay) {
 }
 
 // ── 运行环境检测：在第三方 App 的 WebView 里，自定义 scheme 基本会被拦截 ──
-const XHS_USE_APP = false;
-const DP_USE_APP = false;
+const XHS_USE_APP = true;
+const DP_USE_APP = true;
 const IN_APP_WEBVIEW = (() => {
   const ua = (navigator.userAgent || '').toLowerCase();
   return /micromessenger|xhs|xhsdiscover|discover\/|tiktok|aweme|weibo|qq\/|qqbrowser|alipayclient|dingtalk|lark|feishu|ucbrowser|baiduboxapp|toutiao|newsarticle/.test(ua);
